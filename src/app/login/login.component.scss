@@ -1,0 +1,34 @@
+$baseColor: rgb(119, 2, 80);
+
+.centerForm{
+    margin: auto;
+    width: 30%;
+    height: 100%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+
+    mat-card{
+      width: 350px;
+      padding: 20px;
+      border: 2px solid $baseColor;
+      border-radius: 15px 50px;
+      color: $baseColor;
+      text-align: center;
+    }
+  
+    mat-form-field {
+      width: 300px;   
+      color: $baseColor;     
+    }
+  
+    .btn{
+      width: 300px;
+      background-color: $baseColor;
+      color: white;
+    }
+}
+
+.dataContent{
+  padding: 10px;
+}

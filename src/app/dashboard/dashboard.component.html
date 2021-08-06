@@ -1,0 +1,36 @@
+<mat-toolbar class="appHeader">
+    <button mat-icon-button class="header-icon" (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <span>{{ title }}</span>
+    <span class="header-spacer"></span>
+    <button mat-button [matMenuTriggerFor]="beforeMenu">
+        {{ currentUser }} 
+        <mat-icon>arrow_drop_down</mat-icon>
+    </button>
+    <mat-menu #beforeMenu="matMenu" xPosition="before">
+        <button mat-menu-item>Settings</button>
+        <button mat-menu-item (click)="fnLogout()" routerLink="/logout">Logout</button>
+    </mat-menu>
+</mat-toolbar>
+
+<div class="dataContent">
+    <mat-drawer-container class="app-container" autosize>
+        <mat-drawer #drawer class="app-sidenav" mode="side">
+            <div *ngFor="let n of navItems">
+                <a href="#">{{ n }}</a>
+            </div>
+        </mat-drawer>
+        <div>
+            <p>Dashboard Content Goes Here..</p>
+            <p>Change tool bar. (Default icons, toggle icons+text)</p>
+            <p>Add pages and routing</p>
+            <p>UserName: {{ currentUser }}</p>
+        </div>
+    </mat-drawer-container>
+</div>
+<mat-toolbar class="appFooter">
+    <div>
+        <p>Footer Goes Here!!</p>
+    </div>
+</mat-toolbar>
